@@ -1,0 +1,203 @@
+{
+  "schemaVersion": "1.0.0",
+  "readme": "",
+  "modules": [
+    {
+      "kind": "javascript-module",
+      "path": "src/a.js",
+      "declarations": [
+        {
+          "kind": "class",
+          "description": "",
+          "name": "MyElementA",
+          "mixins": [
+            {
+              "name": "getClass",
+              "module": "src/a.js"
+            }
+          ],
+          "superclass": {
+            "name": "HTMLElement"
+          },
+          "tagName": "my-mixin-a",
+          "customElement": true,
+          "attributes": [
+            {
+              "name": "a",
+              "inheritedFrom": {
+                "name": "getClass",
+                "module": "src/c.js"
+              }
+            }
+          ]
+        },
+        {
+          "kind": "mixin",
+          "description": "",
+          "name": "getClass",
+          "attributes": [
+            {
+              "name": "a"
+            }
+          ],
+          "parameters": [
+            {
+              "name": "superClass",
+              "default": "HTMLElement"
+            }
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "kind": "js",
+          "name": "MyElementA",
+          "declaration": {
+            "name": "MyElementA",
+            "module": "src/a.js"
+          }
+        },
+        {
+          "kind": "js",
+          "name": "getClass",
+          "declaration": {
+            "name": "getClass",
+            "module": "src/a.js"
+          }
+        }
+      ]
+    },
+    {
+      "kind": "javascript-module",
+      "path": "src/b.js",
+      "declarations": [
+        {
+          "kind": "class",
+          "description": "",
+          "name": "MyElementAB",
+          "mixins": [
+            {
+              "name": "getClass",
+              "module": "src/b.js"
+            }
+          ],
+          "superclass": {
+            "name": "MyElementA",
+            "module": "/src/a.js"
+          },
+          "tagName": "my-mixin-ab",
+          "customElement": true,
+          "attributes": [
+            {
+              "name": "a",
+              "inheritedFrom": {
+                "name": "MyElementA",
+                "module": "src/a.js"
+              }
+            }
+          ]
+        },
+        {
+          "kind": "mixin",
+          "description": "",
+          "name": "getClass",
+          "attributes": [
+            {
+              "name": "b"
+            }
+          ],
+          "parameters": [
+            {
+              "name": "superClass",
+              "default": "MyElementA"
+            }
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "kind": "js",
+          "name": "MyElementAB",
+          "declaration": {
+            "name": "MyElementAB",
+            "module": "src/b.js"
+          }
+        },
+        {
+          "kind": "js",
+          "name": "getClass",
+          "declaration": {
+            "name": "getClass",
+            "module": "src/b.js"
+          }
+        }
+      ]
+    },
+    {
+      "kind": "javascript-module",
+      "path": "src/c.js",
+      "declarations": [
+        {
+          "kind": "class",
+          "description": "",
+          "name": "MyElementABC",
+          "mixins": [
+            {
+              "name": "getClass",
+              "module": "src/c.js"
+            }
+          ],
+          "superclass": {
+            "name": "MyElementAB",
+            "module": "/src/b.js"
+          },
+          "tagName": "my-mixin-abc",
+          "customElement": true,
+          "attributes": [
+            {
+              "name": "a",
+              "inheritedFrom": {
+                "name": "MyElementA",
+                "module": "src/a.js"
+              }
+            }
+          ]
+        },
+        {
+          "kind": "mixin",
+          "description": "",
+          "name": "getClass",
+          "attributes": [
+            {
+              "name": "c"
+            }
+          ],
+          "parameters": [
+            {
+              "name": "superClass",
+              "default": "MyElementAB"
+            }
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "kind": "js",
+          "name": "MyElementABC",
+          "declaration": {
+            "name": "MyElementABC",
+            "module": "src/c.js"
+          }
+        },
+        {
+          "kind": "js",
+          "name": "getClass",
+          "declaration": {
+            "name": "getClass",
+            "module": "src/c.js"
+          }
+        }
+      ]
+    }
+  ]
+}

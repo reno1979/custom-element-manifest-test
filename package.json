@@ -1,0 +1,14 @@
+{
+  "name": "manifest-analyzer-bug",
+  "version": "1.0.0",
+  "description": "",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/reno1979/custom-element-manifest-test.git"
+  },
+  "license": "MIT",
+  "devDependencies": {
+    "@custom-elements-manifest/analyzer": "^0.5.7"
+  },
+  "customElements": "custom-elements.json"
+}
